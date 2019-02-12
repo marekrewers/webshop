@@ -10,7 +10,8 @@ export class UrlService {
   apiAddress = 'https://webshop-76bc5.firebaseio.com/';
 
   urls = {
-    getCards: 'cards.json'
+    getCards: 'cards.json',
+    saveCards: 'cards.json'
   };
 
   public getUrl(name) {
