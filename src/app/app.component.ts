@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {CardsService} from './services/cards.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'webshop';
+  constructor(private cardsService: CardsService) {}
+
+  onAddCard() {
+    this.cardsService.getCards().subscribe((data) => {
+      console.log(data);
+    });
+  }
 }
