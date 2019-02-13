@@ -1,54 +1,12 @@
-<section>
-  <div class="container">
-    <form [formGroup]="newCardForm" (ngSubmit)="onNewCardFormSubmit()">
-      <div class="row">
-        <div class="col-sm-4">
-          <div class="form-group">
-            <label for="cardName">Card Name</label>
-            <input type="text" class="form-control" formControlName="cardName">
-          </div>
-          <div class="form-group">
-            <label for="cardDescription">Card Description</label>
-            <input type="text" class="form-control" formControlName="cardDescription">
-          </div>
-          <div class="form-group">
-            <label for="cardPhotoUrl">Card Photo Url</label>
-            <input type="text" class="form-control" formControlName="cardPhotoUrl">
-          </div>
-          <button class="btn btn-primary" type="submit" [disabled]="!newCardForm.valid">Submit</button>
-        </div>
-        <div class="col-sm-8">
-          <div class="album py-5 bg-light">
-            <div class="container">
-              <div class="row">
-                <div class="col-md-4" *ngFor="let card of cards">
-                  <div class="card mb-4 shadow-sm">
-                    <img [src]="card.photoUrl" alt="">
-                    <div class="card-body">
-                      <p class="card-text">{{ card.name }}</p>
-                      <div class="d-flex justify-content-between align-items-center">
-                        <small class="text-muted">{{ card.description }}</small>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </form>
-    <a href="#" class="btn btn-primary" (click)="onShowCards()">Show Cards</a>
-    <a href="#" class="btn btn-primary" (click)="onSaveCards()">SaveCards</a>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <app-menu></app-menu>
+    </div>
+    <div class="col-sm-8">
+      <router-outlet></router-outlet>
+    </div>
   </div>
-</section>
-<footer class="text-muted">
-  <div class="container">
-    <p class="float-right">
-      <a href="#">Back to top</a>
-    </p>
-    <p>Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
-    <p>New to Bootstrap? <a href="https://getbootstrap.com/">Visit the homepage</a> or read our <a href="/docs/4.3/getting-started/introduction/">getting started guide</a>.</p>
-  </div>
-</footer>
-<router-outlet></router-outlet>
+</div>
+
+

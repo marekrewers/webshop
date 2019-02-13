@@ -8,41 +8,6 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
 
-  cards: Card[] = [];
-
-  newCardForm = new FormGroup({
-    cardName: new FormControl('', Validators.required),
-    cardDescription: new FormControl('', Validators.required),
-    cardPhotoUrl: new FormControl('', Validators.required)
-  });
-
-  constructor(private cardsService: CardsService) {
-  }
-
-  onShowCards() {
-    this.cardsService.getCards().subscribe((response: Card[]) => {
-      this.cards = response;
-    });
-  }
-
-  onNewCardFormSubmit() {
-    const cardData = {
-      name: this.newCardForm.value.cardName,
-      description: this.newCardForm.value.cardDescription,
-      photoUrl: this.newCardForm.value.cardPhotoUrl
-    };
-
-    this.cards.push(new Card(cardData.name, cardData.description, cardData.photoUrl));
-  }
-
-  onSaveCards() {
-    this.cardsService.saveCards(this.cards).subscribe((result) => {
-      console.log(result);
-    });
-  }
-
-  ngOnInit() {
-  }
 }

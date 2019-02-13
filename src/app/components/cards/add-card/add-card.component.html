@@ -1,0 +1,19 @@
+<section>
+  <div class="container">
+    <form [formGroup]="newCardForm" (ngSubmit)="onNewCardFormSubmit()">
+          <div class="form-group">
+            <label for="cardName">Card Name</label>
+            <input type="text" class="form-control" formControlName="cardName">
+          </div>
+          <div class="form-group">
+            <label for="cardDescription">Card Description</label>
+            <input type="text" class="form-control" formControlName="cardDescription">
+          </div>
+          <div class="form-group">
+            <label for="cardPhotoUrl">Card Photo Url</label>
+            <input type="text" class="form-control" formControlName="cardPhotoUrl">
+          </div>
+          <button class="btn btn-primary" type="submit" [disabled]="!newCardForm.valid">Submit</button>
+      </form>
+  </div>
+</section>
