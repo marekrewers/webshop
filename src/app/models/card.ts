@@ -1,4 +1,5 @@
 export class Card {
+  public isFeatured: boolean;
   public name: string;
   public description: string;
   public photoUrl: string;
@@ -8,6 +9,5 @@ export class Card {
     this.name = name;
     this.description = desc;
     this.photoUrl = photoUrl;
-    this.id = (new Date()).getTime();
   }
 }

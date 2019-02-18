@@ -23,7 +23,7 @@ export class FeaturedCardsComponent implements OnInit {
 
   onShowCards() {
     this.cardsService.getCards().subscribe((response: Card[]) => {
-      this.cards = response;
+      this.cards = response.filter((card: Card) => card.isFeatured);
     });
   }
 

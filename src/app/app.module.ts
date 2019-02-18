@@ -11,14 +11,14 @@ import {RouterModule} from '@angular/router';
 import {routes} from './app.routes';
 import { MenuComponent } from './components/menu/menu.component';
 import { FeaturedCardsComponent } from './components/featured-cards/featured-cards.component';
-import { AddCardComponent } from './components/cards/add-card/add-card.component';
+import { CardDetailComponent } from './components/cards/card-detail/card-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
     FeaturedCardsComponent,
-    AddCardComponent,
+    CardDetailComponent,
   ],
   imports: [
     BrowserModule,
